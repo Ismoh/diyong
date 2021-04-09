@@ -6,6 +6,7 @@
  * Everything related to Input:
  * Input pin (A0-A5) on UnoR3 for reading potentiometer value.
  * Input value of the potentiometer (5V) is between 0 - 1023.
+ * https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/
  */
 const int potiAnalogInputPin = A0; // A0 - A5
 int potiAnalogInputValue = 0; // 0 - 1023
@@ -14,6 +15,7 @@ int potiAnalogInputValue = 0; // 0 - 1023
  * Everything related to LEDs.
  * 980Hz PWM Output on Pin 5 and 6.
  * 490Hz PWM Output on Pin 9, 10, 11.
+ * https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/
  */
 const int ledPin1_980 = 5;
 const int ledPin2_980 = 6;
@@ -48,7 +50,8 @@ void loop() {
  * PWM = 0 -> LED on 5V.
  */
 int convertAnalogInputToPwm(float analogInput) {
-  float pwmValue = (255.0 / 1023.0) * analogInput; // 0,249266862170088
+  //float pwmValue = (255.0 / 1023.0) * analogInput; // 0,249266862170088
+  float pwmValue = analogInput / 4;
   Serial.println(pwmValue);
   return 255.0 - pwmValue;
 }
