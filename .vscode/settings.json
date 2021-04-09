@@ -1,0 +1,8 @@
+{
+    "arduino.path": "C:\\Program Files (x86)\\Arduino",
+    "files.associations": {
+        "*.ino": "platformio-debug.asm"
+    },
+    "arduino.logLevel": "verbose",
+    "arduino.defaultBaudRate": 9600
+}
